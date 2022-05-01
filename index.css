@@ -1,0 +1,184 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: rgb(229, 220, 240);
+}
+
+.gridContainer {
+  min-height: 100vh;
+  display: grid;
+  grid-template-areas: "header"         
+                        "main"                
+                        "footer";  
+  grid-template-rows: auto 1fr auto; 
+  justify-content: center; 
+}
+
+.title {
+  color: black;
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+header {
+  grid-area: header;
+  margin-bottom: 30px;
+  max-width: 960px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+}
+
+.ulHeader {
+  display: flex;
+  list-style: none;
+  flex-wrap: wrap;
+  gap: 50px;
+  justify-content: center;
+}
+
+.button {
+  min-width: 100px;
+  font-size: 20px;
+  color: aliceblue;
+  background-color: rgb(114, 170, 114);
+  border-radius: 15px;
+  padding: 10px;
+  border: none;
+  transition-property: all;
+  transition-duration: 1.5s;
+}
+
+.button:hover {
+  background-color: green;
+  transform: scale(1.3);
+  color: black;
+}
+
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  grid-area: main;
+  max-width: 960px;
+  padding: 15px;
+  
+}
+
+.main__item {
+  width: 150px;
+  height: 150px;
+  background-color: blueviolet;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition-property: all;
+  transition-duration: 3s;
+}
+
+.main__item:hover {
+  transform: rotate(270deg)
+}
+
+
+.footer {
+  grid-area: footer;
+  
+}
+
+.ballContainer {
+  margin-top: 20px;
+  max-width: 960px;
+  min-height: 100px;
+  position: relative;
+}
+
+.ball {
+  width: 40px;
+  height: 40px;
+  border-radius: 40px;
+  background-color: red;
+  border: none;
+  bottom: 0%;
+  left: 10%;
+  animation-name: ballAnimation;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  position: absolute;
+}
+
+.ball:hover{
+  animation-play-state: paused;
+}
+
+@keyframes ballAnimation {
+  0%{
+    background-color: red;
+  }
+
+  10%{
+    background-color: orange;
+    transform: translate(80px,-70px);
+  }
+  20% {
+    background-color: yellow;
+    transform: translate(160px,0px);
+    
+  }
+
+  30% {
+    background-color: aqua;
+    transform: translate(240px,-70px);
+
+  }
+
+  40% {
+    background-color: green;
+    transform: translate(320px,0px);
+  }
+
+  50% {
+    background-color:brown;
+    transform: translate(400px,-70px);
+  }
+
+  60% {
+    background-color: rgb(93, 168, 93);
+    transform: translate(480px,0px);
+  }
+
+  70% {
+    background-color: rgb(212, 30, 203);
+    transform: translate(560px,-70px);
+  }
+
+  80% {
+    background-color: rgb(72, 127, 189);
+    transform: translate(640px,0px);
+  }
+
+  90% {
+    background-color: blue;
+    transform: translate(720px,-70px);
+
+  }
+
+  100% {
+    background-color: blueviolet;
+    transform: translate(800px,0px);
+  }
+}
